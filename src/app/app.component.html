@@ -3,6 +3,7 @@
     <h1>Team Generator</h1>
 
     <ul class="list">
+      <!-- renderizamos un li por cada elemento que tiene el array members -->
       <li *ngFor="let member of members">{{ member }}</li>
     </ul>
 
@@ -13,6 +14,7 @@
       type="text" 
       placeholder="Name"
       (input)="onInput(addMemberInput.value)"
+      [value]="newMemberName"
       >
       <button (click)="addMember()">Add</button>
     </div>
@@ -21,6 +23,9 @@
       <input type="text" placeholder="# of teams">
       <button>Generate</button>
     </div>
+
+    <!-- con *ngIf controlamos el renderizado condicional de un componente -->
+    <p *ngIf="errorMessage" class="error-msg">{{errorMessage}}</p>
 
   </div>
 </div>
