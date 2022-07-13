@@ -3,8 +3,7 @@
     <h1>Team Generator</h1>
 
     <ul class="list">
-      <li>aith</li>
-      <li>gato</li>
+      <li *ngFor="let member of members">{{ member }}</li>
     </ul>
 
     <div class="add-members-container">
